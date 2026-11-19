@@ -5,7 +5,7 @@
 | Base | [SirPlease/L4D2-Competitive-Rework](https://github.com/SirPlease/L4D2-Competitive-Rework) |
 | Versión comparada | ZoneMod **v2.9.2b** |
 | Revisión comparada | [`0390482d48ee87ba16ecb39490dc6f235dbdc1e0`](https://github.com/SirPlease/L4D2-Competitive-Rework/tree/0390482d48ee87ba16ecb39490dc6f235dbdc1e0/cfg/cfgogl) |
-| Modo de destino | SuperVanilla **v1.1**, sobre Versus |
+| Modo de destino | SuperVanilla **v1.1.1**, sobre Versus |
 
 Los perfiles reducidos heredan los CFG compartidos de su modo principal. Los límites generales se leen en `confogl.cfg`. Los ajustes de `mapcvars.txt` pueden reemplazar el límite de comunes en mapas concretos.
 
@@ -40,7 +40,17 @@ El [mapa de producto](../../scripts/package/package-map.json) incluye cuatro plu
 | --- | --- |
 | Mapas | Los cuatro `mapinfo.txt` de SuperVanilla tienen 213 entradas. Les faltan cinco capítulos de Dead Center 2025 y, frente a ZoneMod 4v4, cuatro entradas de Snowtown. También cambian rangos de aparición de jefes. Hay una clave `max_distance 500` duplicada en `l4d2_fallindeath01` y 13 comandos `static_witch_map` repetidos en el CFG compartido. Los seis ajustes de `mapcvars.txt` coinciden por tamaño en 1v1, 2v2 y 3v3. |
 | Stripper | El [árbol de SuperVanilla](../../cfg/stripper/supervanilla) contiene 157 filtros por mapa y ZoneMod tiene 175. En 93 archivos compartidos se detectaron diferencias en líneas activas. Queda por revisar qué cambios pueden incorporarse sin alterar los spawns de armas y jefes del modo. |
-| Balance compartido | SuperVanilla usa `pill_passer` y omite los rangos de aparición de píldoras. Difieren atributos de SMG, escopetas y Magnum, godframes del Hunter, colisión del Smoker con comunes y daño de golpe y roca del Tank. |
+| Balance compartido | SuperVanilla omite los rangos de aparición de píldoras. Las cuatro variantes usan `fix_pill_pass` de la base con `fix_pill_pass_reload 1`, como ZoneMod. [Carga compartida](../../cfg/cfgogl/svanilla/shared_plugins.cfg) · [Ajustes compartidos](../../cfg/cfgogl/svanilla/shared_settings.cfg). Difieren atributos de SMG, escopetas y Magnum, godframes del Hunter, colisión del Smoker con comunes y daño de golpe y roca del Tank. |
 | Límites de hordas por evento | Los cuatro `mapinfo.txt` conservan 25 entradas `horde_limit` cada uno. Queda por confirmar su efecto en partida y revisar la afirmación correspondiente del README. |
 
-La aceptación en SRCDS queda pendiente. Debe cubrir la carga, la aparición de armas y jefes en mapas representativos y la descarga del modo. [Guía de compilación y distribución](../build/README.md).
+En SRCDS Linux se verificó que los cuatro perfiles cargan `fix_pill_pass`
+con `fix_pill_pass_reload 1` y que Plugin Manager lo descarga al salir del
+modo. En `c1m1_hotel` con SuperVanilla 4v4, dos bots supervivientes
+se pasaron píldoras y adrenalina con recarga y con empuje. Con
+`fix_pill_pass_reload 0`, recarga dejó las píldoras en el inventario del
+emisor. `sm_resetmatch` descargó el plugin.
+El proceso de laboratorio terminó con un fallo al ejecutar `quit`. El fallo
+se reprodujo en un arranque de control sin cargar SuperVanilla.
+
+La aceptación general en SRCDS queda pendiente. Debe cubrir la carga, la
+aparición de armas y jefes en mapas representativos y la descarga del modo. [Guía de compilación y distribución](../build/README.md).

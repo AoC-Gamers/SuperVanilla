@@ -47,6 +47,7 @@ los 117 plugins externos referenciados por las configuraciones de carga.
 `confogl_personalize.cfg` se deben verificar en el perfil del servidor.
 
 Los plugins usan SDKTools, SDKHooks y DHooks de SourceMod. La configuración requiere Stripper para cargar el árbol cfg/stripper/supervanilla.
+La base también aporta `fix_pill_pass.smx`, su gamedata y SourceScramble para las cuatro variantes.
 
 La aceptación en SRCDS requiere comprobar la activación, el inicio de ronda,
 el cambio de modo y la restauración de cvars. La validación offline cubre
