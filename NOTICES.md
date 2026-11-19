@@ -14,7 +14,7 @@ asociados se conservan según esa importación. El alcance de licencia de estos
 recursos sin cabecera individual queda por confirmar antes de publicar.
 
 El `LICENSE` del ZIP local contiene el texto GPLv3 para los plugins. El texto
-CC BY-SA 3.0 acompaña a la configuración en `LICENSES/`. SourceMod provee
+[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/legalcode) acompaña a la configuración. SourceMod provee
 SDKTools, SDKHooks y DHooks. Confogl, ReadyUp y Stripper provienen de la instalación
 base.
 
