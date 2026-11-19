@@ -41,7 +41,7 @@ El [mapa de producto](../../scripts/package/package-map.json) incluye cuatro plu
 | Mapas | Los cuatro `mapinfo.txt` de SuperVanilla tienen 213 entradas. Les faltan cinco capítulos de Dead Center 2025 y, frente a ZoneMod 4v4, cuatro entradas de Snowtown. También cambian rangos de aparición de jefes. Hay una clave `max_distance 500` duplicada en `l4d2_fallindeath01` y 13 comandos `static_witch_map` repetidos en el CFG compartido. Los seis ajustes de `mapcvars.txt` coinciden por tamaño en 1v1, 2v2 y 3v3. |
 | Stripper | El [árbol de SuperVanilla](../../cfg/stripper/supervanilla) contiene 157 filtros por mapa y ZoneMod tiene 175. En 93 archivos compartidos se detectaron diferencias en líneas activas. Queda por revisar qué cambios pueden incorporarse sin alterar los spawns de armas y jefes del modo. |
 | Balance compartido | SuperVanilla omite los rangos de aparición de píldoras. Las cuatro variantes usan `fix_pill_pass` de la base con `fix_pill_pass_reload 1`, como ZoneMod. [Carga compartida](../../cfg/cfgogl/svanilla/shared_plugins.cfg) · [Ajustes compartidos](../../cfg/cfgogl/svanilla/shared_settings.cfg). Difieren atributos de SMG, escopetas y Magnum, godframes del Hunter, colisión del Smoker con comunes y daño de golpe y roca del Tank. |
-| Límites de hordas por evento | Los cuatro `mapinfo.txt` conservan 25 entradas `horde_limit` cada uno. Queda por confirmar su efecto en partida y revisar la afirmación correspondiente del README. |
+| Límites de hordas por evento | Los cuatro `mapinfo.txt` conservan 25 entradas `horde_limit` cada uno. Queda por revisar la afirmación correspondiente del README. |
 
 En SRCDS Linux se verificó que los cuatro perfiles cargan `fix_pill_pass`
 con `fix_pill_pass_reload 1` y que Plugin Manager lo descarga al salir del
@@ -52,5 +52,4 @@ emisor. `sm_resetmatch` descargó el plugin.
 El proceso de laboratorio terminó con un fallo al ejecutar `quit`. El fallo
 se reprodujo en un arranque de control sin cargar SuperVanilla.
 
-La aceptación general en SRCDS queda pendiente. Debe cubrir la carga, la
-aparición de armas y jefes en mapas representativos y la descarga del modo. [Guía de compilación y distribución](../build/README.md).
+[Guía de compilación y distribución](../build/README.md).

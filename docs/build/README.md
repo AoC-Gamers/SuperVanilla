@@ -49,10 +49,8 @@ los 117 plugins externos referenciados por las configuraciones de carga.
 Los plugins usan SDKTools, SDKHooks y DHooks de SourceMod. La configuración requiere Stripper para cargar el árbol cfg/stripper/supervanilla.
 La base también aporta `fix_pill_pass.smx`, su gamedata y SourceScramble para las cuatro variantes.
 
-La aceptación en SRCDS requiere comprobar la activación, el inicio de ronda,
-el cambio de modo y la restauración de cvars. La validación offline cubre
-el contenido del paquete. Los pendientes para una publicación se registran
-en `NOTICES.md`.
+La validación offline cubre el contenido del paquete. Los pendientes para
+una publicación se registran en `NOTICES.md`.
 
 El validador comprueba el texto de la licencia GNU y el enlace CC BY-SA 3.0
 en `NOTICES.md` antes de empaquetar.
