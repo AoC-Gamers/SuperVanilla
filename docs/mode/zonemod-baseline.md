@@ -4,8 +4,8 @@
 | --- | --- |
 | Base | [SirPlease/L4D2-Competitive-Rework](https://github.com/SirPlease/L4D2-Competitive-Rework) |
 | Versión comparada | ZoneMod **v2.9.2b** |
-| Revisión comparada | [`0390482d48ee87ba16ecb39490dc6f235dbdc1e0`](https://github.com/SirPlease/L4D2-Competitive-Rework/tree/0390482d48ee87ba16ecb39490dc6f235dbdc1e0/cfg/cfgogl) |
-| Modo de destino | SuperVanilla **v1.1.1**, sobre Versus |
+| Revisión comparada | [`85139a242fafc913add3862c7066880b0ed9b991`](https://github.com/SirPlease/L4D2-Competitive-Rework/tree/85139a242fafc913add3862c7066880b0ed9b991/cfg/cfgogl) |
+| Modo de destino | SuperVanilla **v1.1.2**, sobre Versus |
 
 Los perfiles reducidos heredan los CFG compartidos de su modo principal. Los límites generales se leen en `confogl.cfg`. Los ajustes de `mapcvars.txt` pueden reemplazar el límite de comunes en mapas concretos.
 
@@ -18,6 +18,12 @@ SuperVanilla suma al `z_common_limit` y al `z_mega_mob_size` de ZoneMod el mismo
 | 2v2 | [`sv2v2`](../../cfg/cfgogl/sv2v2/confogl.cfg) | `zm2v2` | +4 | 14 / 10 | 29 / 25 |
 | 1v1 | [`sv1v1`](../../cfg/cfgogl/sv1v1/confogl.cfg) | `zm1v1` | +2 | 7 / 5 | 14 / 12 |
 
+## Cambios de la base en `85139a24`
+
+Se retiraron `l4d2_steady_boost` y sus ajustes de Confogl. [Retirada en la base](https://github.com/SirPlease/L4D2-Competitive-Rework/commit/7d080dac).
+
+El [filtro propio de Death Toll 2](../../cfg/stripper/supervanilla/maps/c10m2_drainage.cfg) incorpora el bloqueador bajo la rejilla. [Cambio de ZoneMod](https://github.com/SirPlease/L4D2-Competitive-Rework/commit/59c1b56f).
+
 ## Apagado sincronizado
 
 Los cuatro perfiles pasan por el [CFG compartido de apagado](../../cfg/cfgogl/svanilla/confogl_off.cfg). Tras restablecer los ajustes de Confogl, el CFG ejecuta `pm_unload_plugins refresh`. Plugin Manager lo aporta la base. Se verificaron las cuatro cadenas de apagado en el ZIP local.
@@ -29,7 +35,7 @@ Los cuatro perfiles pasan por el [CFG compartido de apagado](../../cfg/cfgogl/sv
 | Jefes | SuperVanilla habilita Tank, Witch y sus indicadores de porcentaje en 4v4, 3v3 y 2v2. En 1v1 fija `sm_tank_can_spawn 0`, `sm_witch_can_spawn 0` y las probabilidades de aparición de ambos en cero. El [CFG compartido](../../cfg/cfgogl/svanilla/shared_cvars.cfg) fija `confogl_boss_unprohibit 0`. La aparición en los formatos habilitados sigue las reglas del mapa y del Director. El [filtro global](../../cfg/stripper/supervanilla/global_filters.cfg) conserva apariciones de Witch por script que ZoneMod filtra. |
 | Armas T2 y T3 | Omite las conversiones de ZoneMod a armas de menor nivel. Las cuotas cuentan las armas que llevan los supervivientes vivos del equipo. Cada grupo tiene una cuota de dos en [4v4](../../cfg/cfgogl/svanilla/svanilla.cfg) y [3v3](../../cfg/cfgogl/sv3v3/sv3v3.cfg), y de una en [2v2](../../cfg/cfgogl/sv2v2/sv2v2.cfg). El CFG de [1v1](../../cfg/cfgogl/sv1v1/sv1v1.cfg) carece de cuotas propias. Los tres grupos son rifles de asalto (M16, Desert Rifle, AK-47 y SG552), escopetas automáticas (Autoshotgun y SPAS) y rifles de precisión (Hunting Rifle, Scout, AWP y Military Sniper). |
 | Daño y recarga | Desactiva el ajuste específico de daño cuerpo a cuerpo contra Charger con `l4d2_melee_damage_charger -1`. El [CFG compartido](../../cfg/cfgogl/svanilla/shared_settings.cfg) aplica multiplicadores contra Tank de `0.8` a Hunting Rifle, Autoshotgun, SPAS y cuatro rifles de asalto, `0.7` a Military Sniper y `1.1` a Scout y AWP. Scout usa 125 de daño y 2 s de recarga. AWP usa 145 y 2.5 s. Ambos cargadores tienen 10 balas. |
-| Puntuación y movimiento | Usa el bonus oficial y omite el plugin de puntuación híbrida. El [CFG de carga](../../cfg/cfgogl/svanilla/shared_plugins.cfg) omite `l4d2_nobackjumps`, en línea con los wallkicks documentados, y añade `l4d2_steady_boost` para infectados. |
+| Puntuación y movimiento | Usa el bonus oficial y omite el plugin de puntuación híbrida. El [CFG de carga](../../cfg/cfgogl/svanilla/shared_plugins.cfg) omite `l4d2_nobackjumps`, en línea con los wallkicks documentados. |
 | Comunes y Boomer | Aumenta los límites generales de comunes y megahordas según el formato. En 4v4 conserva el ecualizador de hordas de Boomer y omite los cuatro valores explícitos de `boomer_horde_amount` que declara ZoneMod. |
 
 El [mapa de producto](../../scripts/package/package-map.json) incluye cuatro plugins. [`Witch_Double_Startle_Fix`](../../addons/sourcemod/scripting/Witch_Double_Startle_Fix.sp) corrige el sobresalto doble de la Witch errante. [`witch_allow_in_safezone`](../../addons/sourcemod/scripting/witch_allow_in_safezone.sp) permite la persecución hacia zonas seguras. [`witch_prevent_target_loss`](../../addons/sourcemod/scripting/witch_prevent_target_loss.sp) evita la pérdida aleatoria del objetivo. [`l4d_reload_fix`](../../addons/sourcemod/scripting/l4d_reload_fix.sp) corrige la animación de recarga al cambiar el tamaño del cargador.

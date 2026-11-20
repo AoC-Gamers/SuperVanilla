@@ -22,3 +22,5 @@ base.
 - [Reload Fix de Silvers](https://forums.alliedmods.net/showthread.php?t=327105)
 - [Plugins de Witch de Lux](https://forums.alliedmods.net/showthread.php?p=2647014)
 - [Proyectos de fbef0102](https://github.com/fbef0102)
+
+- [Bloqueador de física de Death Toll 2 importado de ZoneMod](https://github.com/SirPlease/L4D2-Competitive-Rework/commit/59c1b56f).
